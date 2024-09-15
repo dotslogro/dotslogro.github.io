@@ -1,0 +1,31 @@
+#box {
+    width: 200px;
+    height: 100px;
+    background-color: lightcoral;
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#box::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-bottom-color: lightcoral;
+    border-left-color: lightcoral;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+#box.active::before {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+}
